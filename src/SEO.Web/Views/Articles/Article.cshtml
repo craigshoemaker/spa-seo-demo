@@ -1,0 +1,7 @@
+﻿@model SEO.Web.Models.ArticleViewModel
+
+@{
+    ViewBag.Title = Model.Article.Title;
+}
+
+@Html.Raw(Model.Article.Markup)

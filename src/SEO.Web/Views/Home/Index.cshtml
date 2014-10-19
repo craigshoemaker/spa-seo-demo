@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SE0 + SPA = :)</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/site.css" rel="stylesheet" type="text/css" />
+    <style>
+        html, body {
+            background-color:transparent;
+        }
+
+        #jumbo {
+            margin-top:15%;
+            background-color:transparent;
+        }
+
+        #jumbo a.btn {
+            font-size:2.5em;
+        }
+
+        #jumbo a:hover {
+            text-decoration:none;
+        }
+
+        @@media only screen and (min-width: 725px){
+            #jumbo a.btn {
+                font-size:8em;
+            }
+        }
+    </style> 
+</head>
+<body>
+    <div id="jumbo" class="text-center">
+        <a href="/articles/" class="btn btn-default btn-lg btn-primary">SE0 + SPA = :)</a>    
+    </div>
+</body>
+</html>
