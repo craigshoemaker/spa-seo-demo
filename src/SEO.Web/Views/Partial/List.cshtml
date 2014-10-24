@@ -10,7 +10,7 @@
     <ul>
         @foreach (var article in Model.Articles)
         {
-            <li><a data-ui-sref="article({'pageName':'@article.FileNameEncoded'})">@article.Title</a></li>
+            <li><a href="/articles/@article.FileNameEncoded">@article.Title</a></li>
         }
     </ul>
     <a href="http://google.com">Google</a>
