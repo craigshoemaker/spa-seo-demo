@@ -8,14 +8,14 @@
             $stateProvider
                 .state('articles', {
                     url: '/articles/',
-                    templateUrl: '/partial/',
+                    templateUrl: '/api/articles?type=partial',
                     controller: 'articlesController'
                 })
 
                 .state('article', {
                     url: '/articles/:pageName',
                     templateUrl: function ($stateParams) {
-                        return '/partial/' + $stateParams.pageName;
+                        return '/api/articles/' + $stateParams.pageName + '?type=partial';
                     },
                     controller: 'articlesController'
                 });

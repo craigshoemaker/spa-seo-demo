@@ -174,8 +174,6 @@
     <Content Include="Views\Shared\_Hijax.cshtml" />
     <Content Include="Views\Shared\_History.cshtml" />
     <Content Include="Views\Shared\_Angular2.cshtml" />
-    <Content Include="Views\Partial\Article.cshtml" />
-    <Content Include="Views\Partial\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

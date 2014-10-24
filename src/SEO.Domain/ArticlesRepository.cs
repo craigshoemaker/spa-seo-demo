@@ -2,11 +2,35 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace SEO.Domain
 {
     public class ArticlesRepository
     {
+        public string GetAllInfoPartial(string articleFolderPath)
+        {
+            var list = GetAllInfo(articleFolderPath);
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(@"<section id=""content-container"">");
+            sb.AppendLine("<h1>Articles</h1>");
+            sb.AppendLine("<ul>");
+
+            foreach (ArticleInfo info in list)
+            {
+                var line = string.Format(@"<li><a href=""/articles/{0}"">{1}</a></li>",
+                    info.FileNameEncoded,
+                    info.Title);
+
+                sb.AppendLine(line);
+            }
+
+            sb.AppendLine("</ul>");
+            sb.AppendLine("</section>");
+            return sb.ToString();
+        }
+
         public IList<ArticleInfo> GetAllInfo(string articlesFolderPath)
         {
             var list = new List<ArticleInfo>();
