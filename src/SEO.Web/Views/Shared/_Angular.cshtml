@@ -7,11 +7,7 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
-    <style>
-        #load-container {
-            margin-top: 20px;
-        }
-    </style>
+    <base href="/" />
     @RenderSection("styles", false)
 </head>
 <body>
@@ -23,21 +19,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/" class="navbar-brand">SE0 + SPA = :)</a>
+                <a href="/" class="navbar-brand">SE0 + SPA = :) <small>Angular</small></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/articles/">Articles</a></li>
                 </ul>
-                <div class="pull-right small">Angular</div>
             </div>
         </div>
     </div>
     <div class="container body-content" data-ng-app="app" data-ng-controller="contentController">
         <div id="load-container" ng-show="showLoader"><img src="/images/loader.gif" width="16" height="11" alt="Loading..." /></div>
-        <div class="content">
+        <div class="content" ajax-navigation-anchor-clicks>
             <div ng-show="markup" ng-bind-html="markup"></div>
-            <div ng-hide="markup || showLoader">@RenderBody()</div>
+            <div ng-hide="hideOriginalMarkup">@RenderBody()</div>
         </div>
         <hr />
         <footer>
@@ -49,6 +44,7 @@
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/angular-resource.js"></script>
     <script src="~/Scripts/angular-sanitize.js"></script>
+    <script src="~/Scripts/angular-ui-router.js"></script>
     <script src="~/Scripts/app/app.js"></script>
     <script src="~/Scripts/app/controllers/contentController.js"></script>
     @RenderSection("scripts", false)

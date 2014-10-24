@@ -8,12 +8,6 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
-    <style>
-        #load-container {
-            margin-top: 20px;
-            display: none;
-        }
-    </style>
     @RenderSection("styles", false)
     <script>
         //*
@@ -67,6 +61,7 @@
             <p class="text-muted text-center small">Craig Shoemaker</p>
         </footer>
     </div>
+    <div id="info" class="badge">Hijax (@DateTime.Now.ToLongTimeString())</div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>

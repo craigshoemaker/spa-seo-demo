@@ -103,11 +103,14 @@
     <Content Include="images\loader.gif" />
     <Content Include="Scripts\angular-sanitize.js" />
     <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-ui-router.js" />
+    <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular-resource.js" />
     <Content Include="Scripts\angular-resource.min.js" />
     <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\articlesController.js" />
     <Content Include="Scripts\app\controllers\contentController.js" />
     <Content Include="Scripts\hijax.js" />
     <Content Include="Scripts\history.js" />
@@ -149,6 +152,7 @@
     <Compile Include="Controllers\api\ArticlesController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PartialController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -169,6 +173,9 @@
     <Content Include="Views\Shared\_Angular.cshtml" />
     <Content Include="Views\Shared\_Hijax.cshtml" />
     <Content Include="Views\Shared\_History.cshtml" />
+    <Content Include="Views\Shared\_Angular2.cshtml" />
+    <Content Include="Views\Partial\Article.cshtml" />
+    <Content Include="Views\Partial\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -178,7 +185,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\app\services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SEO.Domain\SEO.Domain.csproj">

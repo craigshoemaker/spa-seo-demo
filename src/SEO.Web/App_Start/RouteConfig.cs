@@ -20,6 +20,17 @@ namespace SEO.Web
             );
 
             routes.MapRoute(
+                name: "Partial",
+                url: "partial/{fileName}",
+                defaults: new
+                {
+                    controller = "Partial",
+                    action = "Index",
+                    fileName = UrlParameter.Optional
+                }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { 

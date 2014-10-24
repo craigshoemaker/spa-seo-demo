@@ -11,6 +11,11 @@ body {
     padding-bottom: 20px;
 }
 
+#load-container {
+    margin-top: 20px;
+    display: none;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -30,4 +35,17 @@ textarea {
 
 .navbar-nav {
     font-size:1.2em;
+}
+
+.navbar-brand > small {
+    font-size:0.55em;
+}
+
+#info {
+    position: fixed;
+    top: 22px;
+    right: 35%;
+    z-index: 10000;
+    padding-top:4px;
+    color:#666;
 }

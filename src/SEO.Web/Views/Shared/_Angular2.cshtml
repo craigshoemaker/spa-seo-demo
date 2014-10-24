@@ -7,6 +7,7 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <base href="/" />
     @RenderSection("styles", false)
 </head>
 <body>
@@ -27,22 +28,22 @@
             </div>
         </div>
     </div>
-
-    <div class="container body-content">
-        <div id="load-container"><img src="/images/loader.gif" width="16" height="11" alt="Loading..." /></div>
-        <div id="content-container" class="content">
-            @RenderBody()
+    <div class="container body-content" data-ng-app="app">
+        <div class="content">
+            <div data-ui-view><img src="/images/loader.gif" width="16" height="11" alt="Loading..." /></div>
+            <div class="hide">@RenderBody()</div>
         </div>
-        <hr />
-        <footer>
-            <p class="text-muted text-center small">Craig Shoemaker</p>
-        </footer>
     </div>
-    <div id="info" class="badge">History (@DateTime.Now.ToLongTimeString())</div>
+    <footer>
+        <p class="text-muted text-center small">Craig Shoemaker</p>
+    </footer>
+    <div id="info" class="badge">Angular (@DateTime.Now.ToLongTimeString())</div>
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/scripts/history.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-resource.js"></script>
+    <script src="~/Scripts/angular-ui-router.js"></script>
+    <script src="~/Scripts/app/app.js"></script>
+    <script src="~/Scripts/app/articlesController.js"></script>
     @RenderSection("scripts", false)
 </body>
 </html>

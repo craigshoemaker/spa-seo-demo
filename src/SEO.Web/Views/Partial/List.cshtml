@@ -1,0 +1,17 @@
+﻿@model SEO.Web.Models.HomeViewModel
+
+@{
+    Layout = null;
+    ViewBag.Title = "Articles";
+}
+
+<section id="content-container">
+    <h1>Articles</h1>
+    <ul>
+        @foreach (var article in Model.Articles)
+        {
+            <li><a data-ui-sref="article({'pageName':'@article.FileNameEncoded'})">@article.Title</a></li>
+        }
+    </ul>
+    <a href="http://google.com">Google</a>
+</section>
