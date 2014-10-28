@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
-<html>
+<html data-ng-app="app">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title :: SE0 + SPA = :)</title>
+    <title data-ng-bind="page.title">@ViewBag.Title :: SE0 + SPA = :)</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
@@ -19,18 +19,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/" class="navbar-brand">SE0 + SPA = :)</a>
+                <a href="/" target="_self" class="navbar-brand">SE0 + SPA = :)</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/articles/">Articles</a></li>
+                    <li><a href="/articles/" target="_self">Articles</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container body-content" data-ng-app="app">
+    <div class="container body-content">
         <div class="content">
-            <div data-ui-view><img src="/images/loader.gif" width="16" height="11" alt="Loading..." /></div>
+            <div data-ui-view data-extract-title-from-content><img src="/images/loader.gif" width="16" height="11" alt="Loading..." /></div>
             <div class="hide">@RenderBody()</div>
         </div>
     </div>

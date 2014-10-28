@@ -1,4 +1,5 @@
 ﻿angular.module('app', ['ngResource', 'ui.router'])
+
     .config(
                 ['$locationProvider', '$stateProvider',
         function ($locationProvider,   $stateProvider) {
@@ -7,7 +8,7 @@
 
             $stateProvider
                 .state('articles', {
-                    url: '/articles/',
+                    url: '/articles',
                     templateUrl: '/api/articles?type=partial',
                     controller: 'articlesController'
                 })
@@ -19,4 +20,35 @@
                     },
                     controller: 'articlesController'
                 });
-        }]);
+        }])
+
+    .run(
+                ['$rootScope',
+        function ($rootScope) {
+
+        $rootScope.page = {
+            setTitle: function(title) {
+                this.title = title;
+            }
+        }
+
+        $rootScope.$on('$routeChangeSuccess', function(event, current, previous) {
+            $rootScope.page.setTitle(current.$$route.title || 'Articles');
+        });
+    }]);
+
+
+angular.module('app').directive('extractTitleFromContent',
+
+            ['$rootScope',
+    function ($rootScope) {
+        return {
+            link: function (scope, element) {
+
+                if (element.find('h1').length > 0) {
+                    var title = element.find('h1')[0].innerHTML;
+                    $rootScope.page.setTitle(title);
+                }
+            }
+        }
+    }]);

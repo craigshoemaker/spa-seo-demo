@@ -1,8 +1,8 @@
 ﻿angular.module('app').controller('articlesController',
 
             ['$scope', '$state',
-    function ($scope, $state) {
+    function ($scope,   $state) {
+
+        // do something interesting here
 
     }]);
-
-// todo : http://stackoverflow.com/questions/20183222/updating-title-tag-using-angularjs-and-ui-router
