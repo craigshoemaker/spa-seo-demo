@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-ng-bind="page.title">@ViewBag.Title :: SE0 + SPA = :)</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/anim-in-out.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <link rel="icon" type="image/png" href="favicon.png" />
@@ -30,9 +31,15 @@
         </div>
     </div>
     <div class="container body-content">
-        <div class="content">
-            <div data-ui-view data-extract-title-from-content><img src="/images/loader.gif" width="16" height="11" alt="Loading..." /></div>
-            <div class="hide">@RenderBody()</div>
+        <div class="row">
+            <div class="content col-sm-10">
+                <div data-ui-view
+                     data-extract-title-from-content
+                     data-anim-speed="500"
+                     data-anim-sync="true"
+                     class="anim-in-out anim-fade"></div>
+                <div class="hide">@RenderBody()</div>
+            </div>
         </div>
     </div>
     <footer>
@@ -41,8 +48,10 @@
     <div id="info" class="badge">Angular (@DateTime.Now.ToLongTimeString())</div>
 
     <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-animate.js"></script>
     <script src="~/Scripts/angular-resource.js"></script>
     <script src="~/Scripts/angular-ui-router.js"></script>
+    <script src="~/Scripts/anim-in-out.js"></script>
     <script src="~/Scripts/app/app.js"></script>
     <script src="~/Scripts/app/articlesController.js"></script>
     @RenderSection("scripts", false)

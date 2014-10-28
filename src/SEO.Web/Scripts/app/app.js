@@ -1,4 +1,4 @@
-﻿angular.module('app', ['ngResource', 'ui.router'])
+﻿angular.module('app', ['ngAnimate','ngResource', 'ui.router', 'anim-in-out'])
 
     .config(
                 ['$locationProvider', '$stateProvider',

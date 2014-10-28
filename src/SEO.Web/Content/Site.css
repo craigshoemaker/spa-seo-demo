@@ -49,3 +49,11 @@ textarea {
     padding-top:4px;
     color:#666;
 }
+
+h2 {
+    border-bottom:1px solid #ccc;
+}
+
+.lead {
+    font-size: 25.5px;
+}
