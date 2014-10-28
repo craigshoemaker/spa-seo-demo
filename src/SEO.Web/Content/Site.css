@@ -44,11 +44,18 @@ textarea {
 #info {
     position: fixed;
     top: 22px;
-    right: 35%;
+    right: 20%;
     z-index: 10000;
     padding-top:4px;
     color:#666;
 }
+
+@media only screen and (min-width : 1224px) {
+    #info {
+        right:2%;
+    }
+}
+
 
 h2 {
     border-bottom:1px solid #ccc;

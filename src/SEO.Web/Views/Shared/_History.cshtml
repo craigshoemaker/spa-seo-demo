@@ -30,9 +30,13 @@
     </div>
 
     <div class="container body-content">
-        <div id="load-container"><img src="/images/loader.gif" width="16" height="11" alt="Loading..." /></div>
-        <div id="content-container" class="content">
-            @RenderBody()
+        <div class="row">
+            <div class="col-sm-10">
+                <div id="load-container"><img src="/images/loader.gif" width="16" height="11" alt="Loading..." /></div>
+                <div id="content-container" class="content">
+                    @RenderBody()
+                </div>
+            </div>
         </div>
         <hr />
         <footer>

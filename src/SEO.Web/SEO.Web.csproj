@@ -175,7 +175,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Views\Articles\Article.cshtml" />
     <Content Include="Views\Shared\_Angular.cshtml" />
-    <Content Include="Views\Shared\_Hijax.cshtml" />
+    <Content Include="Views\Shared\_Hash.cshtml" />
     <Content Include="Views\Shared\_History.cshtml" />
     <Content Include="Views\Shared\_Angular2.cshtml" />
     <None Include="Web.Debug.config">
