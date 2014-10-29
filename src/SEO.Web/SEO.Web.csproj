@@ -115,7 +115,6 @@
     <Content Include="Scripts\anim-in-out.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\articlesController.js" />
-    <Content Include="Scripts\app\controllers\contentController.js" />
     <Content Include="Scripts\hijax.js" />
     <Content Include="Scripts\history.js" />
     <Content Include="Scripts\bootstrap.js">

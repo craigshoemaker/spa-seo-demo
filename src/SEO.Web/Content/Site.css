@@ -57,8 +57,14 @@ textarea {
 }
 
 
-h2 {
+h2, .h2 {
     border-bottom:1px solid #ccc;
+    font-size: 40px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 45px;
+    margin-bottom: 11.5px;
 }
 
 .lead {
