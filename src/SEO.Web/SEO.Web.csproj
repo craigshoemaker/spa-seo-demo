@@ -125,6 +125,7 @@
       <DependentUpon>_lib.js</DependentUpon>
     </Content>
     <Content Include="Scripts\_lib.js" />
+    <Content Include="_content\index.html" />
     <Content Include="_content\what-is-history.html" />
     <Content Include="_content\what-is-hijax.html" />
     <Content Include="_content\what-is-hashbang.html" />

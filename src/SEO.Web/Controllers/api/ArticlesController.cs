@@ -14,10 +14,10 @@ namespace SEO.Web.Controllers.API
 
             if (type == "partial")
             {
-                return repository.GetAllInfoPartial(ApplicationConfig.Instance.ArticlesFolderPath);
+                return repository.GetByName(ApplicationConfig.Instance.ArticlesFolderPath).Markup;
             } else 
             {
-                return repository.GetAllInfo(ApplicationConfig.Instance.ArticlesFolderPath);;    
+                return repository.GetByName(ApplicationConfig.Instance.ArticlesFolderPath);
             }
         }
 

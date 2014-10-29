@@ -30,20 +30,9 @@ namespace SEO.Web.Controllers
             }
 
             var repository = new ArticlesRepository();
-            
-            if (string.IsNullOrEmpty(fileName))
-            {
-                var articles = repository.GetAllInfo(ApplicationConfig.Instance.ArticlesFolderPath);
-                var vm = new HomeViewModel();
-                vm.Articles = articles;
-                return View("List", vm);
-            }
-            else
-            {
-                var vm = new ArticleViewModel();
-                vm.Article = repository.GetByName(ApplicationConfig.Instance.ArticlesFolderPath, fileName);
-                return View("Article", vm);
-            }
+            var vm = new ArticleViewModel();
+            vm.Article = repository.GetByName(ApplicationConfig.Instance.ArticlesFolderPath);
+            return View("Article", vm);
         }
     }
 }
