@@ -11,6 +11,20 @@
     initiated rather than allow the standard full-browser request for the page.
 </p>
 <p>
+    The following code listing demonstrates how you can select all relative links
+    in jQuery:
+</p>
+<pre>
+var selector = '#content-container a[href^="/"], ' +
+               '#content-container a[href^="' + window.location.origin + '"]';
+            
+$(selector).on('click', function (e) {
+    e.preventDefault();
+    var href = this.getAttribute('href');
+    // do some processing here
+    return false;
+});</pre>
+<p>
     The Hijax approach is often used in conjunction with either the
     <a href="/articles/what-is-hashbang">hash/hash-bang</a>
     or <a href="/articles/what-is-history">history</a> implementations to keep the URL

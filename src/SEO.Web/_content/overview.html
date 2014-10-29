@@ -9,8 +9,9 @@
 <h1>Architectural Overview</h1>
 <p class="lead">
     The concept is simple. Use <a href="/articles/what-is-hijax">
-    progressive enhancement techniques to allow the page to operate as a rich web application when JavaScript is
-    available</a>, render real markup and keep the <a href="/articles/what-is-history">URL in sync with your content</a>.
+        progressive enhancement techniques to allow the page to operate as a rich web application when JavaScript is
+        available
+    </a>, render real markup and keep the <a href="/articles/what-is-history">URL in sync with your content</a>.
 </p>
 
 
@@ -21,6 +22,11 @@
     that can or will be loaded into the page, or it could be a snapshot of the
     content. The key here is to have markup rendered in the page that is available
     for a search engine bot to consume.
+</p>
+<p>
+    This works in conjunction with the need to keep the <a href="#update-url">URL updated</a>. This way
+    should you request a page that you navigated to while working with the SPA,
+    the markup for the specific page is rendered upon the first request.
 </p>
 
 
@@ -43,7 +49,7 @@
 </p>
 
 
-<h2>Update the URL</h2>
+<h2 id="update-url">Update the URL</h2>
 <p>
     Whether you are using the <a href="/articles/what-is-hashbang">hash</a> or <a href="/articles/what-is-history">history</a> strategy to keep the URL updated, you
     must make some sort of change to the URL.
