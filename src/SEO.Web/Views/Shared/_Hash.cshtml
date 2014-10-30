@@ -11,7 +11,6 @@
     <link rel="icon" type="image/png" href="favicon.png" />
     @RenderSection("styles", false)
     <script>
-        //*
         (function () {
             if (window.location.hash.indexOf('#/') === 0 ||
                 window.location.hash.indexOf('#!/') === 0) {
@@ -30,7 +29,6 @@
                 head.appendChild(style);
             }
         }());
-        // */
     </script>
 </head>
 <body>
@@ -70,7 +68,7 @@
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/scripts/hijax.js"></script>
+    <script src="~/scripts/hash.js"></script>
     @RenderSection("scripts", false)
 </body>
 </html>

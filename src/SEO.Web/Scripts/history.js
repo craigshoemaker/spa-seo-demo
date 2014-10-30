@@ -1,5 +1,4 @@
-﻿//*
-(function (window, $, Modernizr) {
+﻿(function (window, $, Modernizr) {
 
     var $window,
         $contentContainer,
@@ -135,4 +134,3 @@
     });
 
 }(window, window.jQuery, window.Modernizr));
-// */
