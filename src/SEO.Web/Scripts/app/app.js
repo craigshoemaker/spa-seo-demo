@@ -9,14 +9,14 @@
             $stateProvider
                 .state('articles', {
                     url: '/articles',
-                    templateUrl: '/api/articles?type=partial',
+                    templateUrl: '/api/partial',
                     controller: 'articlesController'
                 })
 
                 .state('article', {
                     url: '/articles/:pageName',
                     templateUrl: function ($stateParams) {
-                        return '/api/articles/' + $stateParams.pageName + '?type=partial';
+                        return '/api/partial/' + $stateParams.pageName;
                     },
                     controller: 'articlesController'
                 });

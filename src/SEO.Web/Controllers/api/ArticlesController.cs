@@ -1,40 +1,24 @@
 ﻿using SEO.Domain;
-using System.Collections.Generic;
 using System.Web.Http;
-using System.Text;
 
 namespace SEO.Web.Controllers.API
 {
     public class ArticlesController : ApiController
     {
-        public object Get(string type = "")
+        public virtual object Get()
         {
             System.Threading.Thread.Sleep(550); // just so you can see the async request :)
             var repository = new ArticlesRepository();
 
-            if (type == "partial")
-            {
-                return repository.GetByName(ApplicationConfig.Instance.ArticlesFolderPath).Markup;
-            } else 
-            {
-                return repository.GetByName(ApplicationConfig.Instance.ArticlesFolderPath);
-            }
+            return repository.GetByName(ApplicationConfig.Instance.ArticlesFolderPath);
         }
 
-        public object Get(string id, string type = "")
+        public virtual object Get(string id)
         {
             System.Threading.Thread.Sleep(550); // just so you can see the async request :)
             var repository = new ArticlesRepository();
 
-            if (type == "partial")
-            {
-                var article = repository.GetByName(ApplicationConfig.Instance.ArticlesFolderPath, id);
-                return article.Markup;
-            }
-            else
-            {
-                return repository.GetByName(ApplicationConfig.Instance.ArticlesFolderPath, id); 
-            }
+            return repository.GetByName(ApplicationConfig.Instance.ArticlesFolderPath, id); 
         }
     }
 }
