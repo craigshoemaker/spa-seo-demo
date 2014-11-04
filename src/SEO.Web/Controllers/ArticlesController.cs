@@ -31,7 +31,7 @@ namespace SEO.Web.Controllers
 
             var repository = new ArticlesRepository();
             var vm = new ArticleViewModel();
-            vm.Article = repository.GetByName(ApplicationConfig.Instance.ArticlesFolderPath);
+            vm.Article = repository.GetByName(ApplicationConfig.Instance.ArticlesFolderPath, fileName);
             return View("Article", vm);
         }
     }
