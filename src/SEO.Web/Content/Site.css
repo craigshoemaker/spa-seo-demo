@@ -78,3 +78,8 @@ img.wrap-right {
     float:right;
     margin:20px;
 }
+
+a[href^="http://"], 
+a[href^="https://"] {
+    text-decoration:underline !important;
+}
