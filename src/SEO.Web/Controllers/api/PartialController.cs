@@ -12,7 +12,7 @@ namespace SEO.Web.Controllers.API
 
         public override object Get(string id)
         {
-            var article = base.Get() as Article;
+            var article = base.Get(id) as Article;
             return article.Markup;
         }
     }
