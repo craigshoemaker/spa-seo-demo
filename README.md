@@ -15,22 +15,17 @@ You can test the different types of strategies by un-commenting the desired layo
 
 ## Architectural Overview
 
-The concept is simple. Use progressive enhancement techniques to allow the page to operate as a rich web application when JavaScript is available, render real markup and keep the URL in sync with your content.
+The concept is simple. Use progressive enhancement techniques to allow the page to operate as a rich web application when JavaScript is available, render real markup on the page and keep the URL in sync with your content.
 
 ### Render Markup on First Request
 
-The first step is to render the markup to the page that is appropriate given
-the URL and it's parameters. This could be the full markup of the content
-that can or will be loaded into the page, or it could be a snapshot of the
-content. The key here is to have markup rendered in the page that is available for a search engine bot to consume.
+The first step is to render the markup to the page that is appropriate to the given the URL and it's parameters. This could be the full markup of the content that can or will be loaded into the page, or it could be a snapshot of the content. The key here is to have markup rendered in the page that is available for a search engine bot to index.
 
-This works in conjunction with the need to keep the URL updated. This way should you request a page that you navigated to while working with the SPA,
-the markup for the specific page is rendered upon the first request.
+This works in conjunction with the need to keep the URL updated. This way should you request a page that you navigated to while working with the SPA, the markup for the specific page is rendered upon the first request.
 
 ### Intercept Link Clicks/Taps
 
-Once the content is loaded on to the page, then you want to be able to take
-control of how content is loaded in the application. By taking control of the clicks you can stop the page from navigating to the selected page and instead make an Ajax request to get the partial page in order to render in the browser.
+Once the content is loaded on to the page, then you want to be able to take control of how content is loaded in the application. By taking control of the clicks/taps you can stop the page from making a full request to the selected page and instead make an Ajax request to get the partial page in order to render in the browser.
 
 ### Inject Partial Into Container
 
