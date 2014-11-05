@@ -124,11 +124,11 @@
       <DependentUpon>_lib.js</DependentUpon>
     </Content>
     <Content Include="Scripts\_lib.js" />
-    <Content Include="_content\index.html" />
-    <Content Include="_content\what-is-history.html" />
-    <Content Include="_content\what-is-hijax.html" />
-    <Content Include="_content\what-is-hashbang.html" />
-    <Content Include="_content\overview.html" />
+    <Content Include="_articles\index.html" />
+    <Content Include="_articles\what-is-history.html" />
+    <Content Include="_articles\what-is-hijax.html" />
+    <Content Include="_articles\what-is-hashbang.html" />
+    <Content Include="_articles\overview.html" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js">

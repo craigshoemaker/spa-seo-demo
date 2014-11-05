@@ -1,0 +1,24 @@
+﻿<h1>What is Hash/Hash Bang?</h1>
+<p class="lead">
+    You can use the hash (<code>#</code>) segment of the URL to keep the browser's
+    window location in sync with different navigation states of the application.
+    The term &quot;hash bang&quot; (<code>#!</code>) specifically refers to a <a href="https://developers.google.com/webmasters/ajax-crawling/docs/getting-started">
+        search engine architecture
+    </a> for crawling Ajax applications.
+</p>
+<h2>Hash</h2>
+<p>The advantage to using the hash to track navigation state is that you can change it via JavaScript without causing a request back to the server. This is valuable because your applications can now process requests through Ajax requests and dynamically load content into the application shell all while keeping the URL updated to reflect the change.</p>
+<p>The disadvantage, however, is that the hash value is never sent to the server. Therefore in order for the application to render correctly, the application shell (often empty of HTML content) is rendered in the browser and then a second request via Ajax is required to get the markup for the desired page. Since search engine bots don’t execute JavaScript (or at least don’t do it well) applications which feature this type of architecture run the risk of having their content hidden from search engines.</p>
+
+<h2>Hash Bang</h2>
+<p>The hash bang approach is a search engine architecture for transforming hash values into a query string value before requesting the page. The benefit to this approach is that the value that was previously only in the hash of the location is now sent to the server as a query string parameter and the server can then return an HTML snapshot of the page for indexing.</p>
+<p>
+    To work properly the page must use the hash bang syntax (<code>#!</code>) and must include a <code>fragment</code>
+    HTML <code>meta</code> tag to tell the search engine bot to conver the hash value into a query string parameter to send to the server. The <code>meta</code>
+    tag syntax is:
+</p>
+<pre>&lt;meta name=&quot;fragment&quot; content=&quot;!&quot;&gt;</pre>
+<p>Then when the server handles the request for the content it can look at the values that come in from the query string and can return the indexable HTML markup for the page. End users never see this HTML snapshot.</p>
+
+
+<p>An alternative approach is to use the <a href="/articles/what-is-history">HTML History API</a> with capable browsers. Read more on the <a href="/articles/overview">architectural overview</a>.</p>
