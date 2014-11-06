@@ -71,7 +71,7 @@
             var currentPageName = removeSlashes(currentPage.getPageName());
             var rootPathName = removeSlashes(currentPage.getRootPathName());
 
-            if (currentPageName === rootPathName) {
+            if (currentPageName.toLowerCase() === rootPathName.toLowerCase()) {
                 render(originalPage);
             } else {
                 getPageContents(function (newPage) {
