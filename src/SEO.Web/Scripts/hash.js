@@ -1,4 +1,4 @@
-﻿(function (window, $) {
+﻿(function (window, $, Modernizr) {
 
     var $contentContainer,
         $loadContainer,
@@ -106,7 +106,7 @@
     };
 
     $(function () {
-        if ('onhashchange' in window) {
+        if (Modernizr.hashchange) {
             $loadContainer = $('#load-container');
             $contentContainer = $('#content-container');
             originalPage.markup = $contentContainer.html();
@@ -120,4 +120,4 @@
         }
     });
 
-}(window, window.jQuery));
+}(window, window.jQuery, Modernizr));
