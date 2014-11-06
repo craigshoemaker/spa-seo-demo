@@ -20,7 +20,7 @@
             return path;
         },
 
-        hasPageNameInHash: function () {
+        hasPageNameInPath: function () {
             return window.location.pathname.length > currentPage.getRootPathName().length + 1;
         },
 
@@ -40,6 +40,7 @@
     };
 
     var handleAnchorClicks = function () {
+
         var selector = '#content-container a[href^="/"], ' +
                        '#content-container a[href^="' + window.location.origin + '"]';
 
@@ -49,7 +50,7 @@
             var href = this.getAttribute('href');
             var name = href.substr(href.lastIndexOf('/') + 1);
 
-            if (currentPage.hasPageNameInHash()) {
+            if (currentPage.hasPageNameInPath()) { // stops chaining of hash values
                 window.location.href = currentPage.getRootPathName() + hash + '/' + name;
             } else {
                 window.location.hash = hash + '/' + name;
@@ -60,12 +61,17 @@
     };
 
     var getPageContents = function (success, failure) {
+
+        // turns:   http://www.example.com/articles/#/what-is-history
+        // into:    http://www.example.com/api/articles/what-is-history
+
         return $.get('/api' + currentPage.getPagePathFromLocation())
                 .done(success)
                 .fail(failure);
     };
 
     var renderPage = function () {
+
         var render = function (page) {
             $contentContainer.html(page.markup);
             window.document.title = page.title + ' :: SEO + SPA = :)';
