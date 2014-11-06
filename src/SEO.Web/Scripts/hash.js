@@ -50,7 +50,7 @@
             var href = this.getAttribute('href');
             var name = href.substr(href.lastIndexOf('/') + 1);
 
-            if (currentPage.hasPageNameInPath()) { // stops chaining of hash values
+            if (currentPage.hasPageNameInPath()) { // makes sure URLs always have same form
                 window.location.href = currentPage.getRootPathName() + hash + '/' + name;
             } else {
                 window.location.hash = hash + '/' + name;
@@ -115,6 +115,8 @@
             loadPageIfHashExists();
 
             $(window).on('hashchange', renderPage);
+
+            // see layout HEAD for more scripts
         }
     });
 
