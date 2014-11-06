@@ -1,10 +1,9 @@
-﻿//*
-(function (window, $) {
+﻿(function (window, $) {
 
     var $contentContainer,
         $loadContainer,
         originalPage = {
-            title: window.document.title,
+            title: '',
             markup: ''
         },
         hash = '#';
@@ -114,4 +113,3 @@
     });
 
 }(window, window.jQuery));
-// */
