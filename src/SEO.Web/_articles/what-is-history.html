@@ -7,16 +7,18 @@
 <p>
     This is valuable because you can change the
     location through code and maintain explicit control over how
-    your application behaves. for instance you may choose to manually
+    your application behaves. For instance, you may choose to manually
     update the browsers location and then request partial page content
-    via an Ajax request. the benefit to this approach is that as you
-    keeping the location updated, should a request be made to that specific
-    location in your application you have the opportunity to render a
+    via an Ajax request. The benefit to this approach is that as you
+    keep the location updated, should a request be made to that specific
+    location in your application, you have the opportunity to render a
     snapshot of the HTML that corresponds to the state of the application
     based on the given URL.
 </p>
 <p>
-    If you're user's browser isn't capable of using the History API, then
+    If your user's <a href="http://caniuse.com/#search=pushstate">browser is not capable of using the History API</a>, then
     you may consider using the <a href="/articles/what-is-hashbang">hash</a> to keep the URL updated.
+    Ultimately the best approach is to use the History API where it is supported and
+    feature a fallback implementation if it is not available in the browser.
     Read more on the <a href="/articles/overview">architectural overview</a>.
 </p>
